@@ -47,7 +47,7 @@ function getTeams() {
                   <div class="card">
                     <a href="./team.html?id=${team.id}">
                       <div class="card-image waves-effect waves-block waves-light">
-                        <img src="${team.crestUrl}" />
+                        <img src="${team.crestUrl.replace(/^http:\/\//i, 'https://')}" />
                       </div>
                     </a>
                     <div class="card-content">
@@ -81,7 +81,7 @@ function getTeams() {
               <div class="card">
                 <a href="./team.html?id=${team.id}">
                   <div class="card-image waves-effect waves-block waves-light">
-                    <img src="${team.crestUrl}" />
+                    <img src="${team.crestUrl.replace(/^http:\/\//i, 'https://')}" />
                   </div>
                 </a>
                 <div class="card-content">
@@ -199,7 +199,7 @@ function getSavedTeams() {
                     <div class="card">
                       <a href="./team.html?id=${team.id}&saved=true">
                         <div class="card-image waves-effect waves-block waves-light">
-                          <img src="${team.crestUrl}" />
+                          <img src="${team.crestUrl.replace(/^http:\/\//i, 'https://')}" />
                         </div>
                       </a>
                       <div class="card-content">
@@ -229,7 +229,7 @@ function getSavedTeamById() {
       <div class="col s12 m3">
         <div class="card">
           <div class="card-image waves-effect waves-block waves-light">
-            <img src="${teams.crestUrl}" />
+            <img src="${teams.crestUrl.replace(/^http:\/\//i, 'https://')}" />
           </div>
         </div>
       </div>
