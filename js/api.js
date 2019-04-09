@@ -47,7 +47,7 @@ function getTeams() {
                   <div class="card">
                     <a href="./team.html?id=${team.id}">
                       <div class="card-image waves-effect waves-block waves-light">
-                        <img src="${team.crestUrl.replace(/^http:\/\//i, 'https://')}" />
+                        <img src="${team.crestUrl}" />
                       </div>
                     </a>
                     <div class="card-content">

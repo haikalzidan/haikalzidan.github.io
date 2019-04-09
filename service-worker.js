@@ -40,7 +40,7 @@ workbox.precaching.precacheAndRoute([{
   },
   {
     url: '/js/api.js',
-    revision: '2'
+    revision: '3'
   },
 ]);
 
