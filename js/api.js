@@ -111,36 +111,38 @@ function getTeamById() {
         if (response) {
           response.json().then(function (data) {
             console.log(data);
-            var articleHTML = `
-            <div class = "row">
-              <div class="col s12 m3">
-                <div class="card">
-                  <div class="card-image">
-                    <img src="${data.crestUrl.replace(/^http:\/\//i, 'https://')}" class="responsive-img"/>
+            if (data.crestUrl != null) {
+              var articleHTML = `
+              <div class = "row">
+                <div class="col s12 m3">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="${data.crestUrl.replace(/^http:\/\//i, 'https://')}" class="responsive-img"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="col s12 m9">
+                  <div class="card">
+                    <div class="card-content">
+                      <span class="card-title">${data.name}</span>
+                      <a href="${data.website}">
+                        <p>Website: ${data.website}</p>
+                      </a>
+                      <p>Address: ${data.address}</p>
+                      <p>Founded: ${data.founded}</p>
+                      <p>Colors: ${data.clubColors}</p>
+                      <p>Venue: ${data.venue}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col s12 m9">
-                <div class="card">
-                  <div class="card-content">
-                    <span class="card-title">${data.name}</span>
-                    <a href="${data.website}">
-                      <p>Website: ${data.website}</p>
-                    </a>
-                    <p>Address: ${data.address}</p>
-                    <p>Founded: ${data.founded}</p>
-                    <p>Colors: ${data.clubColors}</p>
-                    <p>Venue: ${data.venue}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            `;
-            // Sisipkan komponen card ke dalam elemen dengan id #content
-            document.getElementById("body-content").innerHTML = articleHTML;
+              `;
+              // Sisipkan komponen card ke dalam elemen dengan id #content
+              document.getElementById("body-content").innerHTML = articleHTML;
 
-            // Kirim objek data hasil parsing json agar bisa disimpan ke indexed db
-            resolve(data);
+              // Kirim objek data hasil parsing json agar bisa disimpan ke indexed db
+              resolve(data);
+            }
           });
         }
       });
@@ -153,35 +155,37 @@ function getTeamById() {
         // Objek JavaScript dari response.json() masuk lewat variabel data.
         // console.log(data);
         // Menyusun komponen card artikel secara dinamis
-        var articleHTML = `
-        <div class = "row">
-          <div class="col s12 m3">
-            <div class="card">
-              <div class="card-image">
-                <img src="${data.crestUrl.replace(/^http:\/\//i, 'https://')}" class="responsive-img"/>
+        if (data.crestUrl != null) {
+          var articleHTML = `
+          <div class = "row">
+            <div class="col s12 m3">
+              <div class="card">
+                <div class="card-image">
+                  <img src="${data.crestUrl.replace(/^http:\/\//i, 'https://')}" class="responsive-img"/>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m9">
+              <div class="card">
+                <div class="card-content">
+                  <span class="card-title">${data.name}</span>
+                  <a href="${data.website}">
+                    <p>Website: ${data.website}</p>
+                  </a>
+                  <p>Address: ${data.address}</p>
+                  <p>Founded: ${data.founded}</p>
+                  <p>Colors: ${data.clubColors}</p>
+                  <p>Venue: ${data.venue}</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col s12 m9">
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">${data.name}</span>
-                <a href="${data.website}">
-                  <p>Website: ${data.website}</p>
-                </a>
-                <p>Address: ${data.address}</p>
-                <p>Founded: ${data.founded}</p>
-                <p>Colors: ${data.clubColors}</p>
-                <p>Venue: ${data.venue}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        `;
-        // Sisipkan komponen card ke dalam elemen dengan id #content
-        document.getElementById("body-content").innerHTML = articleHTML;
-        // Kirim objek data hasil parsing json agar bisa disimpan ke indexed db
-        resolve(data);
+          `;
+          // Sisipkan komponen card ke dalam elemen dengan id #content
+          document.getElementById("body-content").innerHTML = articleHTML;
+          // Kirim objek data hasil parsing json agar bisa disimpan ke indexed db
+          resolve(data);
+        }
       });
   });
 }

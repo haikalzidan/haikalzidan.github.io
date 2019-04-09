@@ -45,8 +45,6 @@ workbox.precaching.precacheAndRoute([{
 ]);
 
 workbox.routing.registerRoute(
-  'icon.png',
-  'icon192.png',
   new RegExp('/pages/'),
   workbox.strategies.staleWhileRevalidate()
 );
