@@ -60,6 +60,8 @@ function getTeams() {
                     </div>
                   </div>  
                   `;
+            } else {
+              articlesHTML += ``;
             }
           });
           // Sisipkan komponen card ke dalam elemen dengan id #content
@@ -96,6 +98,8 @@ function getTeams() {
                 </div>
               </div>
               `;
+        } else {
+          articlesHTML += ``;
         }
       });
       // Sisipkan komponen card ke dalam elemen dengan id #content
@@ -141,12 +145,15 @@ function getTeamById() {
                 </div>
               </div>
               `;
-              // Sisipkan komponen card ke dalam elemen dengan id #content
-              document.getElementById("body-content").innerHTML = articleHTML;
-
-              // Kirim objek data hasil parsing json agar bisa disimpan ke indexed db
-              resolve(data);
+            } else {
+              articlesHTML += ``;
             }
+            // Sisipkan komponen card ke dalam elemen dengan id #content
+            document.getElementById("body-content").innerHTML = articleHTML;
+
+            // Kirim objek data hasil parsing json agar bisa disimpan ke indexed db
+            resolve(data);
+
           });
         }
       });
@@ -185,11 +192,15 @@ function getTeamById() {
             </div>
           </div>
           `;
-          // Sisipkan komponen card ke dalam elemen dengan id #content
-          document.getElementById("body-content").innerHTML = articleHTML;
-          // Kirim objek data hasil parsing json agar bisa disimpan ke indexed db
-          resolve(data);
+        } else {
+          articlesHTML += ``;
         }
+
+        // Sisipkan komponen card ke dalam elemen dengan id #content
+        document.getElementById("body-content").innerHTML = articleHTML;
+        // Kirim objek data hasil parsing json agar bisa disimpan ke indexed db
+        resolve(data);
+
       });
   });
 }
