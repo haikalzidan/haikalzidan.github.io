@@ -42,23 +42,25 @@ function getTeams() {
           var articlesHTML = "";
           console.log(data);
           data.teams.forEach(function (team) {
-            articlesHTML += `
-                <div class="col s12 m6 l3">
-                  <div class="card">
-                    <a href="./team.html?id=${team.id}">
-                      <div class="card-image waves-effect waves-block waves-light">
-                        <img src="${team.crestUrl}" />
-                      </div>
-                    </a>
-                    <div class="card-content">
-                      <span class="card-title truncate">${team.name}</span>
-                      <a href="${team.website}">
-                        <p>${team.website}</p>
+            if (team.crestUrl != null) {
+              articlesHTML += `
+                  <div class="col s12 m6 l3">
+                    <div class="card">
+                      <a href="./team.html?id=${team.id}">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img src="${team.crestUrl}" />
+                        </div>
                       </a>
+                      <div class="card-content">
+                        <span class="card-title truncate">${team.name}</span>
+                        <a href="${team.website}">
+                          <p>${team.website}</p>
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </div>  
-                `;
+                  </div>  
+                  `;
+            }
           });
           // Sisipkan komponen card ke dalam elemen dengan id #content
           document.getElementById("teams").innerHTML = articlesHTML;
@@ -76,23 +78,25 @@ function getTeams() {
       // Menyusun komponen card artikel secara dinamis
       var articlesHTML = "";
       data.teams.forEach(function (team) {
-        articlesHTML += `
-            <div class="col s12 m6 l3">
-              <div class="card">
-                <a href="./team.html?id=${team.id}">
-                  <div class="card-image waves-effect waves-block waves-light">
-                    <img src="${team.crestUrl.replace(/^http:\/\//i, 'https://')}" />
-                  </div>
-                </a>
-                <div class="card-content">
-                  <span class="card-title truncate">${team.name}</span>
-                  <a href="${team.website}">
-                    <p>${team.website}</p>
+        if (team.crestUrl != null) {
+          articlesHTML += `
+              <div class="col s12 m6 l3">
+                <div class="card">
+                  <a href="./team.html?id=${team.id}">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img src="${team.crestUrl.replace(/^http:\/\//i, 'https://')}" />
+                    </div>
                   </a>
+                  <div class="card-content">
+                    <span class="card-title truncate">${team.name}</span>
+                    <a href="${team.website}">
+                      <p>${team.website}</p>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            `;
+              `;
+        }
       });
       // Sisipkan komponen card ke dalam elemen dengan id #content
       document.getElementById("teams").innerHTML = articlesHTML;
