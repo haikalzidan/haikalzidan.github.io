@@ -12,7 +12,7 @@ workbox.precaching.precacheAndRoute([{
   },
   {
     url: '/index.html',
-    revision: '1'
+    revision: '2'
   },
   {
     url: '/nav.html',
@@ -24,7 +24,7 @@ workbox.precaching.precacheAndRoute([{
   },
   {
     url: '/team.html',
-    revision: '1'
+    revision: '2'
   },
   {
     url: '/css/materialize.min.css',
@@ -48,7 +48,7 @@ workbox.precaching.precacheAndRoute([{
   },
   {
     url: "/js/db.js",
-    revision: '2'
+    revision: '3'
   },
   {
     url: '/js/api.js',

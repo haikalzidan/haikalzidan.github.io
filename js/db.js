@@ -25,6 +25,8 @@ function saveForLater(team) {
       } else {
         console.error('Fitur notifikasi tidak diijinkan.');
       }
+    }).catch(function (err) {
+      console.log(err);
     });
 }
 
