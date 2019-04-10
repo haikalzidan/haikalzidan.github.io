@@ -216,7 +216,7 @@ function getSavedTeams() {
                 <div class="row">
                   <div class="col s12 m6 l3">
                     <div class="card">
-                      <a href="./team.html?id=${team.id}&saved=true">
+                      <a href="./team.html?id=${team.id}">
                         <div class="card-image waves-effect waves-block waves-light">
                           <img src="${team.crestUrl}" />
                         </div>
