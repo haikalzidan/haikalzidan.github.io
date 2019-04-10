@@ -12,7 +12,7 @@ workbox.precaching.precacheAndRoute([{
   },
   {
     url: '/index.html',
-    revision: '2'
+    revision: '3'
   },
   {
     url: '/nav.html',
