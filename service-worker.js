@@ -7,6 +7,10 @@ if (workbox) {
 }
 
 workbox.precaching.precacheAndRoute([{
+    url: "/",
+    revision: '2'
+  },
+  {
     url: '/index.html',
     revision: '1'
   },
@@ -39,6 +43,14 @@ workbox.precaching.precacheAndRoute([{
     revision: '1'
   },
   {
+    url: "/js/idb.js",
+    revision: '1'
+  },
+  {
+    url: "/js/db.js",
+    revision: '2'
+  },
+  {
     url: '/js/api.js',
     revision: '6'
   },
@@ -46,6 +58,11 @@ workbox.precaching.precacheAndRoute([{
 
 workbox.routing.registerRoute(
   new RegExp('/pages/'),
+  workbox.strategies.staleWhileRevalidate()
+);
+
+workbox.routing.registerRoute(
+  new RegExp('/'),
   workbox.strategies.staleWhileRevalidate()
 );
 

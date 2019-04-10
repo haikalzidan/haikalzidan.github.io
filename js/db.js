@@ -18,6 +18,13 @@ function saveForLater(team) {
     })
     .then(function () {
       console.log("Team berhasil di simpan.");
+      var message = `${team.name} ditambahkan ke daftar favorit`;
+
+      if (Notification.permission === 'granted') {
+        showNotification(message);
+      } else {
+        console.error('Fitur notifikasi tidak diijinkan.');
+      }
     });
 }
 
