@@ -7,12 +7,8 @@ if (workbox) {
 }
 
 workbox.precaching.precacheAndRoute([{
-    url: "/",
-    revision: '2'
-  },
-  {
     url: '/index.html',
-    revision: '3'
+    revision: '1'
   },
   {
     url: '/nav.html',
@@ -24,7 +20,7 @@ workbox.precaching.precacheAndRoute([{
   },
   {
     url: '/team.html',
-    revision: '2'
+    revision: '1'
   },
   {
     url: '/css/materialize.min.css',
@@ -43,14 +39,6 @@ workbox.precaching.precacheAndRoute([{
     revision: '1'
   },
   {
-    url: "/js/idb.js",
-    revision: '1'
-  },
-  {
-    url: "/js/db.js",
-    revision: '3'
-  },
-  {
     url: '/js/api.js',
     revision: '6'
   },
@@ -58,11 +46,6 @@ workbox.precaching.precacheAndRoute([{
 
 workbox.routing.registerRoute(
   new RegExp('/pages/'),
-  workbox.strategies.staleWhileRevalidate()
-);
-
-workbox.routing.registerRoute(
-  new RegExp('/'),
   workbox.strategies.staleWhileRevalidate()
 );
 
